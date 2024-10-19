@@ -4,6 +4,6 @@
 - 💞️ I’m looking to collaborate on **DevOps projects and automation tools**  
 - 📫 How to reach me: **nkofi639@gmail.com**  
 - 😄 Pronouns: **He/Him**  
-- ⚡ Fun fact: **I love playing Ludo and eating fufu!**  
+- ⚡ Fun fact: **I love eating fufu!**  
 
 
