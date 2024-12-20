@@ -15,7 +15,7 @@
             color: #333;
             line-height: 1.6;
         }
-
+    
         /* Header and Navigation Styles */
         header {
             display: flex;
@@ -25,29 +25,29 @@
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
+    
         .logo {
             font-size: 32px;
             color: lightgray;
             font-weight: bold;
         }
-
+    
         nav {
             display: flex;
             gap: 30px;
         }
-
+    
         nav a {
             text-decoration: none;
             font-size: 12px;
             color: navy;
             font-weight: bold;
         }
-
+    
         nav a:first-child {
             color: lightgray;
         }
-
+    
         /* Hero Section */
         .hero {
             background: url('https://fiverr-res.cloudinary.com/image/upload/w_880/f_auto,q_auto/v1/attachments/generic_asset/asset/dd37ef4516d9f9b0a573839fbc3e688d-1640084728741/Data%20entry-min.jpg') no-repeat center center/cover;
@@ -56,7 +56,7 @@
             padding: 150px 20px;
             position: relative;
         }
-
+    
         .hero::after {
             content: '';
             position: absolute;
@@ -67,21 +67,21 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
-
+    
         .hero h1 {
             font-size: 3em;
             margin: 0;
             position: relative;
             z-index: 1;
         }
-
+    
         .hero p {
             font-size: 1.5em;
             margin: 10px 0 20px;
             position: relative;
             z-index: 1;
         }
-
+    
         .hero button {
             padding: 10px 20px;
             font-size: 1em;
@@ -94,11 +94,11 @@
             z-index: 1;
             transition: background 0.3s;
         }
-
+    
         .hero button:hover {
             background: #0056b3;
         }
-
+    
         /* Section Styles */
         .section {
             padding: 50px 20px;
@@ -106,20 +106,20 @@
             margin: 0 auto;
             text-align: center;
         }
-
+    
         .section h2 {
             font-size: 2em;
             margin-bottom: 20px;
             color: #499df8;
         }
-
+    
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             gap: 20px;
         }
-
+    
         .service-card {
             background: white;
             border: 1px solid #ddd;
@@ -129,26 +129,27 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
+    
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-
+    
         .service-card h3 {
             margin-top: 0;
             color: #0056b3;
         }
-
+    
         .service-card p {
             font-size: 1em;
             color: #555;
         }
-
+    
+        /* Testimonial Styles */
         .testimonials {
             margin-top: 50px;
         }
-
+    
         .testimonial-card {
             background: white;
             border: 1px solid #ddd;
@@ -159,23 +160,23 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
-
+    
         .testimonial-card p {
             font-style: italic;
             color: #555;
         }
-
+    
         .testimonial-card .author {
             margin-top: 10px;
             font-weight: bold;
             color: #333;
         }
-
+    
         .ratings {
             color: #ffd700;
             font-size: 1.2em;
         }
-
+    
         footer {
             background: #1d7de4;
             color: white;
@@ -183,11 +184,11 @@
             padding: 20px 10px;
             margin-top: 50px;
         }
-
+    
         footer p {
             margin: 5px 0;
         }
-
+    
         /* Social Media Icons */
         footer .social-icons a {
             color: white;
@@ -195,11 +196,11 @@
             text-decoration: none;
             font-size: 24px;
         }
-
+    
         footer .social-icons a:hover {
             color: #f0f0f0;
         }
-
+    
         /* Form Styles */
         form {
             max-width: 600px;
@@ -209,14 +210,14 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
+    
         form label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
             color: #333;
         }
-
+    
         form input, form textarea, form button {
             width: 100%;
             padding: 10px;
@@ -225,7 +226,7 @@
             border-radius: 5px;
             font-size: 1em;
         }
-
+    
         form button {
             background: #007BFF;
             color: white;
@@ -233,11 +234,77 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-
+    
         form button:hover {
             background: #5ba9fc;
         }
-    </style>
+    
+        /* Mobile View Adjustments */
+        @media (max-width: 768px) {
+            .service-card {
+                width: 100%;
+                padding: 15px;
+            }
+    
+            .hero h1 {
+                font-size: 2.5em;
+            }
+    
+            .hero p {
+                font-size: 1.2em;
+            }
+    
+            .hero button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+    
+            .services {
+                justify-content: center;
+            }
+    
+            .testimonial-card {
+                margin: 10px;
+            }
+    
+            .section h2 {
+                font-size: 1.8em;
+            }
+        }
+    
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+    
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+    
+            .service-card {
+                width: 100%;
+            }
+    
+            .hero {
+                padding: 100px 20px;
+            }
+    
+            .hero h1 {
+                font-size: 2em;
+            }
+    
+            .hero p {
+                font-size: 1.1em;
+            }
+    
+            .hero button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+        }
+    </style>    
 </head>
 <body>
     <header>
@@ -262,18 +329,25 @@
         <div class="services">
             <div class="service-card">
                 <h3>Data Transcription</h3>
-                <p>We specialize in transcribing handwritten, scanned, or audio documents into accurate digital text,
-                   ensuring precision for all types, including medical records and meeting notes.</p>
+                <p>We offer expert data transcription services, converting handwritten, scanned,
+                   or audio-recorded documents into accurate digital text. Whether it's medical 
+                   records, meeting notes, or handwritten forms, we ensure that all content is
+                   transcribed with high accuracy and attention to detail.</p>
             </div>
             <div class="service-card">
                 <h3> Data Entry for E-commerce</h3>
-                <p>We offer tailored data entry services for e-commerce, covering product listings, inventory, and order processing. 
-                   Our team ensures accurate, optimized, and up-to-date product details across your platform.</p>
+                <p>We understand the demands of e-commerce businesses and offer specialized data 
+                   entry services for product listings, inventory management, and order processing. 
+                   Our team ensures that your product descriptions, prices, images, and stock information 
+                   are correctly entered, optimized, and maintained on your platform.</p>
             </div>
             <div class="service-card">
                 <h3>Database Updating</h3>
-                <p>We provide expert data cleaning and updating services to ensure your database remains accurate, current, and free from duplicates. 
-                   This enhances data quality and supports informed decision-making.</p>
+                <p>Keeping your database up-to-date is crucial for business success. We provide
+                   thorough data cleaning and updating services to ensure that all your records
+                   are current, accurate, and free from duplicates or inconsistencies. This will 
+                   improve data quality and ensure that you can make informed decisions based on 
+                   reliable information.</p>
             </div>
         </div>
     </div>
