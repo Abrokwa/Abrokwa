@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Data</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation Styles */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 32px;
+            color: lightgray;
+            font-weight: bold;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            font-size: 12px;
+            color: navy;
+            font-weight: bold;
+        }
+
+        nav a:first-child {
+            color: lightgray;
+        }
+
+        /* Hamburger menu for mobile view */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: url('https://fiverr-res.cloudinary.com/image/upload/w_880/f_auto,q_auto/v1/attachments/generic_asset/asset/dd37ef4516d9f9b0a573839fbc3e688d-1640084728741/Data%20entry-min.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 10px 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero button {
+            padding: 10px 20px;
+            font-size: 1em;
+            color: white;
+            background: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            transition: background 0.3s;
+        }
+
+        .hero button:hover {
+            background: #0056b3;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #05090e;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            width: 30%;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            margin-top: 0;
+            color: #0e151d8f;
+        }
+
+        .service-card p {
+            font-size: 1em;
+            color: #555;
+        }
+
+        /* Testimonial Styles */
+        .testimonials {
+            margin-top: 50px;
+        }
+
+        .testimonial-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-card .author {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .ratings {
+            color: #ffd700;
+            font-size: 1.2em;
+        }
+
+        footer {
+            background: #606366;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Social Media Icons */
+        footer .social-icons a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 24px;
+        }
+
+        footer .social-icons a:hover {
+            color: #f0f0f0;
+        }
+
+        /* Form Styles */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        form button {
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        form button:hover {
+            background: #5ba9fc;
+        }
+
+        /* Mobile View Adjustments */
+        @media (max-width: 768px) {
+            .service-card {
+                width: 100%;
+                padding: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .hero button {
+                padding: 12px 25px;
+                font-size: 1.1em;
+            }
+
+            .services {
+                justify-content: center;
+            }
+
+            .testimonial-card {
+                margin: 10px;
+            }
+
+            .section h2 {
+                font-size: 1.8em;
+            }
+
+            /* Make nav links hidden on small screens */
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                z-index: 1000;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            /* Display hamburger icon */
+            .hamburger {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px;
+            }
+
+            nav {
+                top: 60px;
+            }
+
+            nav a {
+                font-size: 14px;
+            }
+
+            .hero {
+                padding: 100px 20px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1.1em;
+            }
+
+            .hero button {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
+
+            /* Adjusting the contact form and testimonial sections */
+            .testimonial-card {
+                margin: 15px 0;
+                width: 100%;
+                padding: 15px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Blue Data</div>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Testimonials</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to Blue Data</h1>
+        <p>Your solution for data entry services</p>
+        <button>Get Started</button>
+    </div>
+
+    <!-- Services Section -->
+    <div class="section">
+        <h2>Our Services</h2>
+        <div class="services">
+            <div class="service-card">
+                <h3>Data Entry</h3>
+                <p>Efficient and accurate data entry services tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <h3>Data Processing</h3>
+                <p>Transform your raw data into meaningful information.</p>
+            </div>
+            <div class="service-card">
+                <h3>Customer Support</h3>
+                <p>Our team is here to support your business with professional assistance.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="testimonials section">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonial-card">
+            <p>"Blue Data has been an essential partner in our business growth. Their data entry services are impeccable!"</p>
+            <div class="author">John Doe</div>
+            <div class="ratings">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+            <p>"The team at Blue Data is highly professional and reliable. They meet deadlines and ensure quality work every time."</p>
+            <div class="author">Jane Smith</div>
+            <div class="ratings">★★★★☆</div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Blue Data. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#" class="fab fa-facebook-f"></a>
+            <a href="#" class="fab fa-twitter"></a>
+            <a href="#" class="fab fa-linkedin"></a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
