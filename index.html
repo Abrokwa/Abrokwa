@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Blue</title>
+    <title>Blue Data</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet"> <!-- Add Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         /* General Styles */
         body {
@@ -15,7 +15,7 @@
             color: #333;
             line-height: 1.6;
         }
-    
+
         /* Header and Navigation Styles */
         header {
             display: flex;
@@ -25,29 +25,44 @@
             background-color: #fff;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-    
+
         .logo {
             font-size: 32px;
             color: lightgray;
             font-weight: bold;
         }
-    
+
         nav {
             display: flex;
             gap: 30px;
         }
-    
+
         nav a {
             text-decoration: none;
             font-size: 12px;
             color: navy;
             font-weight: bold;
         }
-    
+
         nav a:first-child {
             color: lightgray;
         }
-    
+
+        /* Hamburger menu for mobile view */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            transition: all 0.3s ease;
+        }
+
         /* Hero Section */
         .hero {
             background: url('https://fiverr-res.cloudinary.com/image/upload/w_880/f_auto,q_auto/v1/attachments/generic_asset/asset/dd37ef4516d9f9b0a573839fbc3e688d-1640084728741/Data%20entry-min.jpg') no-repeat center center/cover;
@@ -56,7 +71,7 @@
             padding: 150px 20px;
             position: relative;
         }
-    
+
         .hero::after {
             content: '';
             position: absolute;
@@ -67,21 +82,21 @@
             background: rgba(0, 0, 0, 0.5);
             z-index: 0;
         }
-    
+
         .hero h1 {
             font-size: 3em;
             margin: 0;
             position: relative;
             z-index: 1;
         }
-    
+
         .hero p {
             font-size: 1.5em;
             margin: 10px 0 20px;
             position: relative;
             z-index: 1;
         }
-    
+
         .hero button {
             padding: 10px 20px;
             font-size: 1em;
@@ -94,11 +109,11 @@
             z-index: 1;
             transition: background 0.3s;
         }
-    
+
         .hero button:hover {
             background: #0056b3;
         }
-    
+
         /* Section Styles */
         .section {
             padding: 50px 20px;
@@ -106,20 +121,20 @@
             margin: 0 auto;
             text-align: center;
         }
-    
+
         .section h2 {
             font-size: 2em;
             margin-bottom: 20px;
-            color: #499df8;
+            color: #05090e;
         }
-    
+
         .services {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             gap: 20px;
         }
-    
+
         .service-card {
             background: white;
             border: 1px solid #ddd;
@@ -129,27 +144,27 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s, box-shadow 0.3s;
         }
-    
+
         .service-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
-    
+
         .service-card h3 {
             margin-top: 0;
-            color: #0056b3;
+            color: #0e151d8f;
         }
-    
+
         .service-card p {
             font-size: 1em;
             color: #555;
         }
-    
+
         /* Testimonial Styles */
         .testimonials {
             margin-top: 50px;
         }
-    
+
         .testimonial-card {
             background: white;
             border: 1px solid #ddd;
@@ -160,35 +175,35 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             text-align: left;
         }
-    
+
         .testimonial-card p {
             font-style: italic;
             color: #555;
         }
-    
+
         .testimonial-card .author {
             margin-top: 10px;
             font-weight: bold;
             color: #333;
         }
-    
+
         .ratings {
             color: #ffd700;
             font-size: 1.2em;
         }
-    
+
         footer {
-            background: #1d7de4;
+            background: #606366;
             color: white;
             text-align: center;
             padding: 20px 10px;
             margin-top: 50px;
         }
-    
+
         footer p {
             margin: 5px 0;
         }
-    
+
         /* Social Media Icons */
         footer .social-icons a {
             color: white;
@@ -196,11 +211,11 @@
             text-decoration: none;
             font-size: 24px;
         }
-    
+
         footer .social-icons a:hover {
             color: #f0f0f0;
         }
-    
+
         /* Form Styles */
         form {
             max-width: 600px;
@@ -210,14 +225,14 @@
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-    
+
         form label {
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
             color: #333;
         }
-    
+
         form input, form textarea, form button {
             width: 100%;
             padding: 10px;
@@ -226,7 +241,7 @@
             border-radius: 5px;
             font-size: 1em;
         }
-    
+
         form button {
             background: #007BFF;
             color: white;
@@ -234,94 +249,122 @@
             cursor: pointer;
             transition: background 0.3s;
         }
-    
+
         form button:hover {
             background: #5ba9fc;
         }
-    
+
         /* Mobile View Adjustments */
         @media (max-width: 768px) {
             .service-card {
                 width: 100%;
                 padding: 15px;
             }
-    
+
             .hero h1 {
                 font-size: 2.5em;
             }
-    
+
             .hero p {
                 font-size: 1.2em;
             }
-    
+
             .hero button {
                 padding: 12px 25px;
                 font-size: 1.1em;
             }
-    
+
             .services {
                 justify-content: center;
             }
-    
+
             .testimonial-card {
                 margin: 10px;
             }
-    
+
             .section h2 {
                 font-size: 1.8em;
             }
+
+            /* Make nav links hidden on small screens */
+            nav {
+                display: none;
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 20px 0;
+                z-index: 1000;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            /* Display hamburger icon */
+            .hamburger {
+                display: flex;
+            }
         }
-    
+
         @media (max-width: 480px) {
             header {
                 padding: 15px;
             }
-    
+
             nav {
-                flex-direction: column;
-                align-items: center;
-                gap: 15px;
+                top: 60px;
             }
-    
-            .service-card {
-                width: 100%;
+
+            nav a {
+                font-size: 14px;
             }
-    
+
             .hero {
                 padding: 100px 20px;
             }
-    
+
             .hero h1 {
                 font-size: 2em;
             }
-    
+
             .hero p {
                 font-size: 1.1em;
             }
-    
+
             .hero button {
                 padding: 12px 25px;
                 font-size: 1em;
             }
         }
-    </style>    
+    </style>
 </head>
 <body>
     <header>
         <div class="logo">
             blue data
         </div>
-        <nav>
-            <a href="#">HOME</a>
-            <a href="#services">SERVICES</a>
-            <a href="#contact">CONTACT</a>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navbar">
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
         </nav>
     </header>
 
     <div class="hero">
-        <h1>Streamline Your Data Entry Needs</h1>
-        <p>Let us handle your data while you focus on growing your business</p>
-        <button>Get Started Now</button>
+        <h1>Welcome to Data Blue Services</h1>
+        <p>Professional Data Entry Services to Help Your Business Grow</p>
+        <button>Get Started</button>
     </div>
 
     <div id="services" class="section">
@@ -330,14 +373,11 @@
             <div class="service-card">
                 <h3>Data Transcription</h3>
                 <p>We offer expert data transcription services, converting handwritten, scanned,
-                   or audio-recorded documents into accurate digital text. Whether it's medical 
-                   records, meeting notes, or handwritten forms, we ensure that all content is
-                   transcribed with high accuracy and attention to detail.</p>
+                   or audio-recorded documents into accurate digital text.</p>
             </div>
             <div class="service-card">
                 <h3> Data Entry for E-commerce</h3>
-                <p>We understand the demands of e-commerce businesses and offer specialized data 
-                   entry services for product listings, inventory management, and order processing. 
+                <p>We offer specialized data entry services for product listings, inventory management, and order processing. 
                    Our team ensures that your product descriptions, prices, images, and stock information 
                    are correctly entered, optimized, and maintained on your platform.</p>
             </div>
@@ -345,19 +385,17 @@
                 <h3>Database Updating</h3>
                 <p>Keeping your database up-to-date is crucial for business success. We provide
                    thorough data cleaning and updating services to ensure that all your records
-                   are current, accurate, and free from duplicates or inconsistencies. This will 
-                   improve data quality and ensure that you can make informed decisions based on 
-                   reliable information.</p>
+                   are current, accurate, and free from duplicates or inconsistencies.</p>
             </div>
         </div>
     </div>
 
     <div id="testimonials" class="section testimonials">
-        <h2>Testimonials</h2>
+        <h2><em>What They Say About Our Services</em></h2>
         <div class="testimonial-card">
             <p>"Blue Data has been an invaluable partner for our company. Their data entry services are fast, reliable, and accurate."</p>
             <span class="ratings">★★★★★</span>
-            <div class="author">- Alex Johnson, CEO of TechWorld</div>
+            <div class="author">- Bright Boakye, CEO of TechWorld</div>
         </div>
         <div class="testimonial-card">
             <p>"I highly recommend Blue Data! They helped streamline our database operations and saved us so much time."</p>
@@ -366,20 +404,23 @@
         </div>
     </div>
 
-    <div id="contact" class="section">
+
+
+    <div class="section" id="contact">
         <h2>Contact Us</h2>
-        <form>
-            <label for="name">Name:</label>
+        <form id="contact-form">
+            <label for="name">Full Name</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Email:</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" required>
 
-            <label for="message">Message:</label>
+            <label for="message">Message</label>
             <textarea id="message" name="message" rows="4" required></textarea>
 
             <button type="submit">Send Message</button>
         </form>
+        <div id="success-message" style="display:none; color:green; margin-top:20px;">Thank you for reaching out! We will get back to you shortly.</div>
     </div>
 
     <footer>
@@ -391,5 +432,32 @@
             <a href="https://instagram.com" target="_blank" class="fab fa-instagram"></a>
         </div>
     </footer>
+
+
+    <script>
+        // Toggle mobile menu
+        function toggleMenu() {
+            var navbar = document.getElementById("navbar");
+            navbar.classList.toggle("active");
+        }
+
+        // Form validation and success message
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent form submission
+
+            // Validate inputs
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
+
+            if (name && email && message) {
+                // Show success message
+                document.getElementById("success-message").style.display = "block";
+
+                // Optionally, clear the form
+                document.getElementById("contact-form").reset();
+            }
+        });
+    </script>
 </body>
 </html>
