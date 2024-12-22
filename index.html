@@ -435,40 +435,27 @@
 
 
    <script>
+        // Toggle mobile menu
         function toggleMenu() {
-            const navbar = document.getElementById("navbar");
+            var navbar = document.getElementById("navbar");
             navbar.classList.toggle("active");
         }
 
-        document.getElementById("contact-form").addEventListener("submit", async function(event) {
-            event.preventDefault();
-            
-            const name = document.getElementById("name").value;
-            const email = document.getElementById("email").value;
-            const message = document.getElementById("message").value;
+        // Form validation and success message
+        document.getElementById("contact-form").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent form submission
 
-            try {
-                const response = await fetch("submit-form", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify({ name, email, message })
-                });
+            // Validate inputs
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let message = document.getElementById("message").value;
 
-                const result = await response.json();
+            if (name && email && message) {
+                // Show success message
+                document.getElementById("success-message").style.display = "block";
 
-                if (result.success) {
-                    document.getElementById("success-message").style.display = "block";
-                    document.getElementById("error-message").style.display = "none";
-                    document.getElementById("contact-form").reset();
-                } else {
-                    throw new Error(result.message);
-                }
-            } catch (error) {
-                document.getElementById("error-message").textContent = error.message;
-                document.getElementById("error-message").style.display = "block";
-                document.getElementById("success-message").style.display = "none";
+                // Optionally, clear the form
+                document.getElementById("contact-form").reset();
             }
         });
     </script>
