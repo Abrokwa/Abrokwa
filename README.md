@@ -1,9 +1,8 @@
-👋 Hi, I’m @Abrokwa  
-- 👀 I’m interested in **DevOps, automation, and cloud technologies**  
-- 🌱 I’m currently learning **Git, Docker, and Jenkins**  
-- 💞️ I’m looking to collaborate on **DevOps projects and automation tools**  
-- 📫 How to reach me: **nkofi639@gmail.com**  
-- 😄 Pronouns: **He/Him**  
-- ⚡ Fun fact: **I love eating fufu!**  
+👋 Hi, I’m @Abrokwa
 
-
+-👀 I’m interested in **Networking, Cybersecurity, and Network Security**  
+-🌱 Currently learning **network protocols, security tools, and best practices**  
+-💞️ Open to collaboration on **networking projects and security solutions**
+-📫 Reach me at: **nkofi639@gmail.com** 
+-😄 Pronouns: **He/Him**
+-⚡ Fun fact: **I love eating fufu! 🍲**
