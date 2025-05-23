@@ -1,7 +1,7 @@
 👋 Hi, I’m @Abrokwa
 
-- 👀 I’m interested in **Networking and Network Security**. 
-- 🌱 Currently learning **network protocols, security tools, and best practices**.  
+- 👀 I’m interested in **Network & System Administration**. 
+- 🌱 Currently learning **networking and linux systems**.  
 - 💞️ Open to collaboration on **networking projects and security solutions**.
 - 📫 Reach me at: **nkofi639@gmail.com**. 
 - 😄 Pronouns: **He/Him**.
